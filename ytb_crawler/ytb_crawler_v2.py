@@ -14,14 +14,14 @@ with open("links.csv", 'r') as links:
             vid.streams \
                 .filter(progressive=True, file_extension="mp4") \
                 .get_highest_resolution() \
-                .download(output_path="sample_videos", filename=str(idx))
+                .download(output_path="vids_n_trans", filename=str(idx))
             try:
                 srt = YouTube(link).captions["en"].generate_srt_captions()
             except KeyError as trans_error:
                 print("no transcription available for ", link)
                 srt = "no transcription available for this video"
                 idx = str(idx) + "_not"
-            with open("sample_videos/" + str(idx) + ".txt", 'w+') as transcription:
+            with open("vids_n_trans/" + str(idx) + ".txt", 'w+') as transcription:
                 transcription.write(vid.title + '\n')
                 transcription.write(link + '\n')
                 transcription.write(srt)
