@@ -31,4 +31,4 @@ python ytb_crawler_v2.py
 ```
 
 NOTES:
-- in ytb_crawler/vids_n_trans the X_not.txt indicates that the correspondent video (X.mp4) has no available transcript.
+- in ytb_crawler/vids_n_trans directory, the X_not.txt indicates that the correspondent video (X.mp4) has no available transcript. :( 
